@@ -10,7 +10,7 @@ Below you'll find a list of **unresolved issues** or areas where further explora
 
 | 🌟 **Topic**                        | 📖 **Description**                                     | 🔗 **Discussion Page**                                             |
 |-------------------------------------|--------------------------------------------------------|--------------------------------------------------------------------|
-| **Decimal Point Issue in TextBox Bindings**   | Having trouble entering decimal points in WPF `TextBox` controls bound to `double` properties? Lucy is facing an issue where the `TextBox` doesn't allow typing a decimal point, even when the input is bound to a `double` property. She tried using `PreviewTextInput` and other methods, but the issue remains unsolved. Join the discussion to share insights and potential fixes! | [Discussion Page](https://github.com/lucyberryhub/WPF-Tutorial/wiki/Decimal-Point-Handling) |
+| **Decimal Point Issue in TextBox Bindings**   | Having trouble entering decimal points in WPF `TextBox` controls bound to `double` properties? Lucy is facing an issue where the `TextBox` doesn't allow typing a decimal point, even when the input is bound to a `double` property. She tried using `PreviewTextInput` and other methods, but the issue remains unsolved. Join the discussion to share insights and potential fixes! | [Discussion Page](https://github.com/lucyberryhub/WPF-Issue/wiki/Decimal-Point-Handling) |
 
 ---
 
