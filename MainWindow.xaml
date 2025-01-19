@@ -1,0 +1,39 @@
+﻿<Window x:Class="TroubleBerry.WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:TroubleBerry.WPF"
+        xmlns:viewModels="clr-namespace:TroubleBerry.WPF.ViewModel"
+        Title="TroubleBerry WPF" Height="350" Width="600">
+    <Window.DataContext>
+        <viewModels:MainViewModel/>
+    </Window.DataContext>
+
+    <Grid>
+        <!-- Grid with two columns: one for DataGrid and one for TextBox -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Left side: DataGrid -->
+        <DataGrid Grid.Column="0" Margin="10"
+                  ItemsSource="{Binding Berries}" 
+                  SelectedItem="{Binding SelectedBerry, Mode=TwoWay}" 
+                  AutoGenerateColumns="False" IsReadOnly="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Berry Name" Binding="{Binding BerryName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                <DataGridTextColumn Header="Berry Count" Binding="{Binding BerryCount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <!-- Right side: TextBox for SelectedBerry, shown only when a row is selected -->
+        <StackPanel Grid.Column="1" VerticalAlignment="Top" Margin="10"
+                    Visibility="{Binding SelectedBerry, Converter={StaticResource NullToVisibilityConverter}}">
+                <TextBlock Text="Berry Name:" FontWeight="Bold" />
+                <TextBox Text="{Binding SelectedBerry.BerryName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+
+                <TextBlock Text="Berry Count:" FontWeight="Bold" Margin="0,10,0,0" />
+                <TextBox Text="{Binding SelectedBerry.BerryCount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+        </StackPanel>
+    </Grid>
+</Window>
